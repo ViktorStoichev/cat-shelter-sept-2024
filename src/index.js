@@ -16,4 +16,20 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
+app.get('/cats/add-breed', (req, res) => {
+    res.render('cats/addBreed');
+});
+
+app.get('/cats/add-cat', (req, res) => {
+    res.render('cats/addCat');
+});
+
+app.get('/cats/edit-cat', (req, res) => {
+    res.render('cats/editCat');
+});
+
+app.get('/cats/cat-shelter', (req, res) => {
+    res.render('cats/catShelter');
+});
+
 app.listen(port, () => console.log(`Server is listening on http://localhost:${port}...`));
