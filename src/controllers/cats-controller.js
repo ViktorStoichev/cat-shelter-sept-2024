@@ -51,11 +51,25 @@ router.get('/cats/edit-cat/:id', async (req, res) => {
     res.render('cats/editCat', { cat });
 });
 
+router.post('/cats/edit-cat/:id', upload.single('file'), async (req, res) => {
+    const updatedCat = req.body;
+    const file = req.file;
+    const id = req.params.id;
+    await catsService.editCat(updatedCat, file, id);
+    res.redirect('/');
+})
+
 router.get('/cats/cat-shelter/:id', async (req, res) => {
     const id = req.params.id;
     const cat = await catsService.getOneCat(id);
     
     res.render('cats/catShelter', { cat });
 });
+
+router.post('/cats/cat-shelter/:id', async (req, res) => {
+    const id = req.params.id;
+    await catsService.removeCat(id);
+    res.redirect('/');
+})
 
 export const catsController = router;

@@ -14,6 +14,16 @@ function saveDatabase(data) {
     return fs.writeFile(databasePath, JSON.stringify(data, {}, 2));
 }
 
+function deleteFile(filePath) {
+    const fullPath = filePath.slice(1);
+
+    return fs.unlink(fullPath, (err => {
+        if (err) {
+            console.log(err);
+        }
+    }));
+}
+
 async function getAllCats() {
     const database = await getDatabase();
     const cats = database.cats;
@@ -36,8 +46,29 @@ async function addCat(cat) {
     return saveDatabase(database);
 }
 
+async function editCat(updatedCat) {
+    const database = await getDatabase();
+    const currentCat = database.cats.find(cat => cat.id === updatedCat.id);
+    const index = database.cats.indexOf(currentCat);
+    database.cats[index] = updatedCat;
+
+    return saveDatabase(database);
+}
+
+async function removeCat(id) {
+    const database = await getDatabase();
+    const cat = database.cats.find(cat => cat.id === id);
+    const index = database.cats.indexOf(cat);
+
+    database.cats.splice(index, 1);
+
+    return saveDatabase(database);
+}
+
 export const catsData = {
     getAllCats,
     getOneCat,
     addCat,
+    editCat,
+    removeCat
 }
