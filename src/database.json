@@ -3,35 +3,35 @@
     {
       "id": "1",
       "name": "Sisa",
-      "breed": "Persian Cat",
+      "breed": "Persian",
       "description": "top e",
       "imageUrl": "/_111434467_gettyimages-1143489763.jpg"
     },
     {
       "id": "2",
       "name": "Navcho",
-      "breed": "Persian Cat",
+      "breed": "Bengal",
       "description": "oshte po top e",
       "imageUrl": "/cat-814952_1280.jpg"
     },
     {
       "id": "3",
       "name": "Emanuel",
-      "breed": "Persian Cat",
+      "breed": "Sphynx",
       "description": "bez greshka",
       "imageUrl": "/cat-3591348_1280.jpg"
     },
     {
       "id": "4",
       "name": "Tom",
-      "breed": "Persian Cat",
+      "breed": "Maine Coon",
       "description": "bez komentar",
       "imageUrl": "/cat-2083492_1280.jpg"
     },
     {
       "id": "5",
       "name": "Chochi",
-      "breed": "Persian Cat",
+      "breed": "Siamese",
       "description": "dobre e",
       "imageUrl": "/cat-323262_1280.jpg"
     },
@@ -41,6 +41,33 @@
       "breed": "Fluffy Cat",
       "id": "1tfx85rezwm1eocfvi",
       "imageUrl": "/1727075810129.jpeg"
+    },
+    {
+      "name": "Blue",
+      "description": "ot Rusiq",
+      "breed": "Russian blue",
+      "id": "1tfx85r514m1eq62o0",
+      "imageUrl": "/1727078872310.jpg"
+    }
+  ],
+  "breeds": [
+    {
+      "breed": "Fluffy Cat"
+    },
+    {
+      "breed": "Maine Coon"
+    },
+    {
+      "breed": "Siamese"
+    },
+    {
+      "breed": "Bengal"
+    },
+    {
+      "breed": "Sphynx"
+    },
+    {
+      "breed": "Russian blue"
     }
   ]
 }

@@ -14,30 +14,22 @@ function saveDatabase(data) {
     return fs.writeFile(databasePath, JSON.stringify(data, {}, 2));
 }
 
-async function getAllCats() {
+async function getAllBreeds() {
     const database = await getDatabase();
-    const cats = database.cats;
+    const breeds = database.breeds;
 
-    return cats;
+    return breeds;
 }
 
-async function getOneCat(id) {
-    const cats = await getAllCats();
-    const catById = cats.find(cat => cat.id === id);
-
-    return catById;
-}
-
-async function addCat(cat) {    
+async function addBreed(breed) {
     const database = await getDatabase();
 
-    database.cats.push(cat);
+    database.breeds.push(breed);
 
     return saveDatabase(database);
 }
 
-export const catsData = {
-    getAllCats,
-    getOneCat,
-    addCat,
+export const breedsData = {
+    getAllBreeds,
+    addBreed
 }

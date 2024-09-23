@@ -1,23 +1,23 @@
 import { catsData } from "../data/cats-data.js";
 import uniqid from 'uniqid';
 
-async function getAll() {
-    return await catsData.getAll();
+async function getAllCats() {
+    return await catsData.getAllCats();
 }
 
-async function getOne(id) {
-    return await catsData.getOne(id);
+async function getOneCat(id) {
+    return await catsData.getOneCat(id);
 }
 
-async function add(cat, file) {
+async function addCat(cat, file) {
     cat.id = uniqid();
     cat.imageUrl = '/' + file.filename;
 
-    return await catsData.add(cat);
+    return await catsData.addCat(cat);
 }
 
 export const catsService = {
-    getAll,
-    getOne,
-    add,
+    getAllCats,
+    getOneCat,
+    addCat,
 }
