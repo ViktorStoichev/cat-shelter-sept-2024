@@ -4,10 +4,9 @@ import { catsService } from "../services/cats-service.js";
 const router = Router();
 
 router.get('/', async (req, res) => {
-    const data = await catsService.getAll()
-    console.log(data);
+    const cats = await catsService.getAll()
     
-    res.render('home');
+    res.render('home', { cats });
 });
 
 export const homeController = router;
