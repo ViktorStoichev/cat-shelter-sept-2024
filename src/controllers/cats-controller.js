@@ -47,8 +47,10 @@ router.post('/cats/add-cat', upload.single('file'), async (req, res) => {
 router.get('/cats/edit-cat/:id', async (req, res) => {
     const id = req.params.id;
     const cat = await catsService.getOneCat(id);
+    const breeds = await breedsService.getAllBreeds();
 
-    res.render('cats/editCat', { cat });
+
+    res.render('cats/editCat', { cat, breeds });
 });
 
 router.post('/cats/edit-cat/:id', upload.single('file'), async (req, res) => {

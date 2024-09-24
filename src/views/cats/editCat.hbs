@@ -9,7 +9,9 @@
     <input name="file" type="file" id="image">
     <label for="group">Breed</label>
     <select name="breed" id="group">
-        <option value="{{cat.breed}}">{{cat.breed}}</option>
+        {{#each breeds}}
+            <option value="{{breed}}">{{breed}}</option>
+        {{/each}}
     </select>
     <button>Edit Cat</button>
 </form>

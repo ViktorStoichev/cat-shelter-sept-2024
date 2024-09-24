@@ -15,11 +15,13 @@ function saveDatabase(data) {
 }
 
 function deleteFile(filePath) {
-    const fullPath = filePath.slice(1);
+    const fullPath = 'src/uploads' + filePath;
 
     return fs.unlink(fullPath, (err => {
         if (err) {
             console.log(err);
+        } else {
+            console.log('Successful delete!');
         }
     }));
 }
@@ -52,6 +54,7 @@ async function editCat(updatedCat) {
     const index = database.cats.indexOf(currentCat);
     database.cats[index] = updatedCat;
 
+    deleteFile(currentCat.imageUrl);
     return saveDatabase(database);
 }
 
